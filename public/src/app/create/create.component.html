@@ -1,0 +1,21 @@
+<p>create works!</p>
+<div class="container">
+  <h1>Favorite authors</h1>
+  <u><a [routerLink]="['/home']">Home</a></u>
+  <p>Add a new author:</p>
+  <div class="wrapper">
+      {{ newAuthor | json}}
+
+    <form (submit)=onSubmit()>
+        {{ error }}
+      <div class="form-group border col-6">
+        <label for="name" >Name:</label>
+        <input type="text" class="form-control col-8 mb-3" id="name" placeholder="Enter name" name="name" [(ngModel)]="newAuthor.name">
+
+        <a class="btn btn-primary mr-2" [routerLink]="['/home']">Cancel</a>
+
+        <button  type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

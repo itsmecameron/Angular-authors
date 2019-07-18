@@ -1,0 +1,18 @@
+<p>edit bibfworks!</p>
+<p>{{author._id}}</p>
+<div class="container">
+  <h1>Favorite authors</h1>
+  <u><a [routerLink]="['/home']">Home</a></u>
+  <p>Edit this author:</p>
+  <div class="wrapper border col-6">
+    {{ author | json }}
+    <form (submit)="updateAuthor(author._id)">
+        {{ error }}
+      <div class="form-group mt-3">
+        <label> Name:
+          <input type="text" name="author.name" [(ngModel)]="author.name" value="{{author.name}}" />
+        </label>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
